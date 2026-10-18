@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/latin-300.css";
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+@import "@fontsource/bodoni-moda/latin-500.css";
+@import "@fontsource/bodoni-moda/latin-600.css";
+@import "@fontsource/bodoni-moda/latin-600-italic.css";
+
+@theme {
+  --font-sans: "Outfit", "Liberation Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bodoni Moda", "Liberation Serif", palatino, serif;
+
+  --color-paper: #f3efe6;
+  --color-paper-2: #e6dfd1;
+  --color-ink: #161410;
+  --color-muted: #6f685c;
+  --color-line: #d5cdb9;
+  --color-clay: #b5522a;
+  --color-clay-deep: #8a3e1f;
+  --color-night: #1c1916;
+  --color-night-2: #2a2622;
+  --color-foam: #f7f4ee;
+
+  --text-hero: clamp(3rem, 12vw, 9.25rem);
+  --text-hero--line-height: 0.86;
+  --text-hero--letter-spacing: -0.035em;
+  --text-display: clamp(2.35rem, 4.6vw, 4.4rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.03em;
+
+  --tracking-brand: 0.18em;
+
+  --aspect-portrait: 2 / 3;
+  --aspect-land: 3 / 2;
+  --aspect-frame: 4 / 5;
+
+  --radius-sm: 2px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:not(:disabled) {
+    transition:
+      scale 150ms ease-out,
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease;
+  }
+
+  button:not(:disabled):active {
+    scale: 0.96;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-clay);
+    color: var(--color-paper);
+  }
+}
+
+.parallax-img {
+  position: absolute;
+  inset-inline: 0;
+  top: -8%;
+  height: 116%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.snap-row {
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.snap-row::-webkit-scrollbar {
+  height: 2px;
+}
+
+.snap-row::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+}
+
+.cursor-dot {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .cursor-dot {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

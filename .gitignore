@@ -1,0 +1,12 @@
+node_modules/
+.vercel/
+.tanstack/
+dist/
+*.log
+.app-dev*
+.build*
+.typecheck*
+screenshots/
+artifacts/
+.grok/
+!.grok/app-env.json
