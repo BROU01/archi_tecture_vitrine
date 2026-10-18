@@ -10,3 +10,4 @@ screenshots/
 artifacts/
 .grok/
 !.grok/app-env.json
+gallery_images/
